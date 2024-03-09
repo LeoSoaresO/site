@@ -14,5 +14,8 @@ export class ApiService {
   getInfo() {
     return this.http.get(`${API.URL}/info.json`)
   }
+  getSkills() {
+    return this.http.get(`${API.URL}/icons/icons.json`)
+  }
 
 }

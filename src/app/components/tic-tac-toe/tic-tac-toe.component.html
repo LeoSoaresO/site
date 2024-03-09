@@ -1,0 +1,13 @@
+<section class="container">
+  <div id="statusArea" className="status">Próximo Jogador: <span class="player">{{currentPlayer}}</span></div>
+  <div id="winnerArea" *ngIf="winner !== ''" className="winner">Vencedor: <span class="winner">{{winner}}</span></div>
+  <section class="game">
+    <div class="row" *ngFor="let row of [0, 1, 2]; let i = index">
+      <button (click)="moves(i, k)" *ngFor="let col of [0, 1, 2]; let k = index"
+      class="square">
+      {{board[i][k]}}
+      </button>
+    </div>
+  </section>
+  <button class="btn" (click)="restartGame()">Recomeçar</button>
+</section>

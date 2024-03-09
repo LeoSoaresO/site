@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-tic-tac-toe',
+  templateUrl: './tic-tac-toe.component.html',
+  styleUrls: ['./tic-tac-toe.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class TicTacToeComponent implements OnInit {
 
   currentPlayer: string = '';
   playerX: string = 'X'
@@ -81,5 +81,4 @@ export class HomeComponent implements OnInit {
 
     return false;
   }
-
 }

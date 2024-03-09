@@ -18,10 +18,33 @@
         </div>
       </div>
     </div>
-    <div class="description card">
-      <p>{{data.description}}</p>
+    <div class="holder">
+      <div class="flex gap_div">
+        <div class="description card">
+          <ngx-typed-js [strings]="[data.description]" [typeSpeed]="10">
+            <div class="text">
+              <span class="typing"></span>
+            </div>
+          </ngx-typed-js>
+        </div>
+        <div class="buttons">
+          <button (click)="downloadFile()" class="btn-cv">Download CV</button>
+          <button class="btn-contact">Contato</button>
+        </div>
+      </div>
+      <div class="skills" *ngIf="skills">
+        <div class="icon_skills card" *ngFor="let s of skills.skils">
+          <span class="name">{{s.name}}</span>
+          <img class="skill" [src]="s.icon" alt="" srcset="">
+          <div class="flex">
+            <img class="stars" *ngFor="let star of getStarsArray(s.stars)" [src]="skills.starIcon" alt="" srcset="">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+     <!-- <app-tic-tac-toe></app-tic-tac-toe> -->
 
   <!--Waves Container-->
   <div>
