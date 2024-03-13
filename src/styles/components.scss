@@ -10,3 +10,11 @@
 .cont {
   padding: 0px 10rem;
 }
+
+.text-shadow {
+  text-shadow: 0 0 7px $grey, 0 0 25px $grey;
+}
+
+.text-shadow-2 {
+  text-shadow: 0 0 2px $grey, 0 0 15px $white;
+}

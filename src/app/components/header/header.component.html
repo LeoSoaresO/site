@@ -2,12 +2,12 @@
 
   <!--Content before waves-->
   <div class="inner-header cont flex justify-around items-start">
-    <div class="info card">
-      <div class="img">
+    <div class="info card animate__animated animate__fadeInLeft" >
+      <div class="img animate__animated animate__rotateIn animate__delay-1s">
         <img src="{{data.img}}" alt="">
       </div>
       <div class="personal">
-        <h1>{{data.name}}</h1>
+        <h1 class="text-shadow-2">{{data.name}}</h1>
         <span>{{data.role}}</span>
       </div>
       <div class="links">
@@ -20,21 +20,29 @@
     </div>
     <div class="holder">
       <div class="flex gap_div">
-        <div class="description card">
-          <ngx-typed-js [strings]="[data.description]" [typeSpeed]="10">
+        <div class="description card animate__animated animate__fadeInDown animate__delay-4s">
+          <ngx-typed-js [strings]="[
+          'Desenvolvedor Front-end Sênior.',
+          'Mais de 4 anos de experiência.',
+          'Tecnólogo em Sistemas para Internet.',
+          'Participação em diversos projetos em áreas como educação, financeiro, social media, aluguel de veículos e marketplaces',
+          'Experiência em criação e desenvolvimento de dashboards, marketplaces, sites institucionais, aplicações de controle e aplicações de uso interno.',
+          'Especializado em criar aplicativos web, escaláveis e altamente responsivos.',
+          'Sempre buscando aprender!'
+          ]" [typeSpeed]="20" [loop]="true" [startDelay]="5000">
             <div class="text">
               <span class="typing"></span>
             </div>
           </ngx-typed-js>
         </div>
         <div class="buttons">
-          <button (click)="downloadFile()" class="btn-cv">Download CV</button>
-          <button class="btn-contact">Contato</button>
+          <button (click)="downloadFile()" class="btn-cv animate__animated animate__fadeInRight animate__delay-2s">Download CV</button>
+          <button class="btn-contact animate__animated animate__fadeInRight animate__delay-3s">Contato</button>
         </div>
       </div>
-      <div class="skills" *ngIf="skills">
+      <div class="skills animate__animated animate__fadeInRight animate__delay-1s" *ngIf="skills">
         <div class="icon_skills card" *ngFor="let s of skills.skils">
-          <span class="name">{{s.name}}</span>
+          <span class="name text-shadow-2">{{s.name}}</span>
           <img class="skill" [src]="s.icon" alt="" srcset="">
           <div class="flex">
             <img class="stars" *ngFor="let star of getStarsArray(s.stars)" [src]="skills.starIcon" alt="" srcset="">
@@ -47,7 +55,7 @@
      <!-- <app-tic-tac-toe></app-tic-tac-toe> -->
 
   <!--Waves Container-->
-  <div>
+  <div class="animate__animated animate__fadeInUp">
   <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
   <defs>

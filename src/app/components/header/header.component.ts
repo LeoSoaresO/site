@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(
-    private service: ApiService
+    private service: ApiService,
+    private http: HttpClient
   ) { }
 
   ngOnInit(): void {
@@ -24,8 +26,18 @@ export class HeaderComponent implements OnInit {
   }
 
   downloadFile(){
-    window.open("https://leosoareso.github.io/apis/site/api/profile_pic.jpeg")
-  }
+    const url = 'https://leosoareso.github.io/apis/site/api/cv.pdf';
+    this.http.get(url, { responseType: 'blob' }).subscribe((res: any) => {
+        const blob = new Blob([res], { type: res.type });
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = downloadUrl;
+        link.download = 'Leonardo_cv';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    }
 
   getInfo(){
     this.service.getInfo().subscribe((res:any) =>{
