@@ -6,11 +6,20 @@
   background: linear-gradient(90deg, rgba(243,245,233,1) 0%, rgba(207,203,227,1) 73%, rgba(186,232,191,1) 100%);
 }
 
+.logo{
+  padding-top: 20px;
+  height: 130px;
+  img{
+    width: 300px;
+    height: 100%;
+  }
+}
+
 .inner-header {
   height:70vh;
   width:100%;
   margin: 0;
-  padding-top: 40px;
+  padding-top: 20px;
   gap: 40px;
   @media screen {
     @media (max-width:1600px) {
@@ -120,10 +129,10 @@
           text-transform: uppercase;
           font-weight: bold;
           color: $black;
-          background-color: $cream;
+          background: linear-gradient(90deg, $light_cream 0%, $light_blue 98%);
           transition: 0.5s ease;
           &:hover{
-            background-color: #ffffde;
+          background: linear-gradient(90deg, $light_cream 0%, $light_blue 86%);
             transition: 0.5s ease;
             font-size: 20px;
           }

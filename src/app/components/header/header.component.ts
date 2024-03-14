@@ -43,7 +43,6 @@ export class HeaderComponent implements OnInit {
     this.service.getInfo().subscribe((res:any) =>{
       this.data = res
       console.log(this.data);
-
     })
   }
 

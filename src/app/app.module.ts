@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { InViewportDirective } from './in-viewport.directive';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     HomeComponent,
     HeaderComponent,
     TicTacToeComponent,
-    TimelineComponent
+    TimelineComponent,
+    InViewportDirective
   ],
   imports: [
     BrowserModule,

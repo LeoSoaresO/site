@@ -1,6 +1,10 @@
-<div class="header" *ngIf="data">
+<div class="header" *ngIf="data && skills">
 
-  <!--Content before waves-->
+  <div class="logo flex justify-center items-center
+  animate__animated animate__fadeInDown">
+    <img src="{{skills.logo}}" alt="">
+  </div>
+
   <div class="inner-header cont flex justify-around items-start">
     <div class="info card animate__animated animate__fadeInLeft" >
       <div class="img animate__animated animate__rotateIn animate__delay-1s">
@@ -20,7 +24,7 @@
     </div>
     <div class="holder">
       <div class="flex gap_div">
-        <div class="description card animate__animated animate__fadeInDown animate__delay-4s">
+        <div class="description card animate__animated animate__fadeIn animate__delay-4s">
           <ngx-typed-js [strings]="[
           'Desenvolvedor Front-end Sênior.',
           'Mais de 4 anos de experiência.',

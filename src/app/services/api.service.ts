@@ -17,5 +17,8 @@ export class ApiService {
   getSkills() {
     return this.http.get(`${API.URL}/icons/icons.json`)
   }
+  getCarrer() {
+    return this.http.get(`${API.URL}/carrer/company.json`)
+  }
 
 }
