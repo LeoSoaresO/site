@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
+import { TimelineComponent } from './components/timeline/timeline.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,
