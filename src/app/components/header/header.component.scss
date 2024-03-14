@@ -12,6 +12,11 @@
   margin: 0;
   padding-top: 40px;
   gap: 40px;
+  @media screen {
+    @media (max-width:1600px) {
+      height:80vh;
+    }
+  }
   .info {
     display: flex;
     flex-direction: column;
@@ -61,6 +66,12 @@
       gap: 30px;
       height: 30%;
       margin-bottom: 40px;
+      @media screen {
+        @media (max-width:1600px) {
+        gap: 20px;
+        flex-direction: column;
+        }
+      }
       .description {
         width: 90%;
         height: 100%;
@@ -68,10 +79,25 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media screen {
+          @media (max-width:1600px) {
+          width: 100%;
+          }
+        }
         .text {
+          @media screen {
+            @media (max-width:1600px) {
+            height: 60px;
+            }
+          }
           span {
             font-size: 30px;
-            font-weight: 300;
+            font-weight: 600;
+            @media screen {
+              @media (max-width:1600px) {
+              font-size: 20px;
+              }
+            }
           }
         }
       }
@@ -82,6 +108,12 @@
         height: 100%;
         width: 16%;
         gap: 30px;
+        @media screen {
+          @media (max-width:1600px) {
+            flex-direction: row;
+            width: 100%;
+          }
+        }
         button {
           height: 50%;
           border-radius: 10px;
@@ -94,6 +126,12 @@
             background-color: #ffffde;
             transition: 0.5s ease;
             font-size: 20px;
+          }
+          @media screen {
+            @media (max-width:1600px) {
+              width: 50%;
+              height: 40px;
+            }
           }
         }
       }
@@ -114,6 +152,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        @media screen {
+          @media (max-width:1600px) {
+            width: 120px;
+          }
+        }
         .name{
           font-size: 17px;
           text-transform: capitalize;
@@ -127,6 +170,11 @@
         .stars{
           width: 15px;
           margin: 0px 5px;
+          @media screen {
+            @media (max-width:1600px) {
+              margin: 0px 1px;
+            }
+          }
         }
       }
     }
