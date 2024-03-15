@@ -20,5 +20,8 @@ export class ApiService {
   getCarrer() {
     return this.http.get(`${API.URL}/carrer/company.json`)
   }
+  getPortfolio() {
+    return this.http.get(`${API.URL}/portfolio/portfolio.json`)
+  }
 
 }

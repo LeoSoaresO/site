@@ -10,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { InViewportDirective } from './in-viewport.directive';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InViewportDirective } from './in-viewport.directive';
     HeaderComponent,
     TicTacToeComponent,
     TimelineComponent,
-    InViewportDirective
+    InViewportDirective,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
