@@ -92,10 +92,20 @@ button {
       overflow: hidden;
       position: relative;
       cursor: pointer;
+      border: 2px ridge #4e00c2;
       transition: all 0.4s ease-in-out;
-
       &:hover {
         width: 400px !important;
+      }
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
       }
     }
   }
