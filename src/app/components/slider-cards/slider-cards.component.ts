@@ -41,13 +41,4 @@ export class SliderCardsComponent implements OnInit {
 
     });
   }
-
-  toggleActive(game: any): void {
-    this.dataset.forEach((g: any) => {
-      if (g !== game) {
-        g.active = false;
-      }
-    });
-    game.active = !game.active;
-  }
 }

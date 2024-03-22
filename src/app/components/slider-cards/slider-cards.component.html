@@ -2,7 +2,7 @@
   <owl-carousel-o [options]="carouselOptions">
     <ng-container *ngFor="let i of dataset" >
       <ng-template carouselSlide>
-        <div class="hold" (click)="toggleActive(i)" >
+        <div class="hold" >
           <div class="item" [style.background-image]="'url(' + i.img + ')'">
             <div class="item-desc">
               <h3>{{ i.name }}</h3>
