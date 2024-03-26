@@ -1,16 +1,17 @@
-import { ApiService } from 'src/app/services/api.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-slider-cards',
   templateUrl: './slider-cards.component.html',
   styleUrls: ['./slider-cards.component.scss']
 })
-export class SliderCardsComponent implements OnInit {
+export class SliderCardsComponent implements OnChanges {
   dataset: any;
   carouselOptions: any;
+  @Input() data:any;
+  @Input() title:string = '';
 
-  constructor(private service: ApiService) {
+  constructor() {
     this.carouselOptions = {
       loop: true,
       mouseDrag: true,
@@ -21,24 +22,11 @@ export class SliderCardsComponent implements OnInit {
       navText: ['', ''],
       center: true,
       startPosition: 0,
-      items: 4,
+      items: 3,
     }
   }
+  ngOnChanges(): void {
 
-  ngOnInit(): void {
-    this.getPortfolio();
   }
 
-  getPortfolio(): void {
-    this.service.getPortfolio().subscribe((res: any) => {
-      console.log(res);
-
-      this.dataset = res.port.map((game: any) => ({
-        ...game,
-        active: false
-      }));
-      console.log(this.dataset);
-
-    });
-  }
 }

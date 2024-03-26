@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,79 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  currentPlayer: string = '';
-  playerX: string = 'X'
-  playerO: string = 'O'
-  winner: string = ''
-  board: string[][] = [['','',''], ['','',''], ['','','']]
+  dataset:any;
 
-  constructor() { }
+  constructor(private service: ApiService) { }
 
 
   ngOnInit() {
-      this.currentPlayer = this.playerX
+    this.getPortfolio();
   }
 
-  restartGame(){
-    this.currentPlayer = this.playerX;
-    this.winner = '';
-    this.board = [['','',''], ['','',''], ['','','']]
-  }
+  getPortfolio(): void {
+    this.service.getPortfolio().subscribe((res: any) => {
+      console.log(res);
 
-  moves(row: any | number, col: any | number){
-    if(!this.board[row][col] && this.winner === ''){
-      this.board[row][col] = this.currentPlayer;
-      if(this.checkIfHaveWinner(row, col)) {
-        this.winner = this.currentPlayer
-      } else {
-        this.currentPlayer = this.currentPlayer === this.playerX ? this.playerO : this.playerX;
-      }
-    }
-  }
+      this.dataset = res.port.map((game: any) => ({
+        ...game,
+        active: false
+      }));
+      console.log(this.dataset);
 
-  checkIfHaveWinner(r: any | number, c: any | number){
-    const bothPlayers = [this.playerX, this.playerO];
-
-    for(const players of bothPlayers){
-      let win = true;
-
-      for(let i = 0; i < 3; i++){
-        if(this.board[r][i] !== players){
-          win = false
-          break
-        }
-      }
-        if (win) return true;
-
-        win = true;
-        for (let i = 0; i < 3; i++){
-          if(this.board[i][c] !== players){
-            win = false;
-            break
-          }
-        }
-        if (win) return true;
-
-        win = true;
-        for(let i = 0; i < 3; i++){
-        if(this.board[i][c] !== players){
-          win = false
-          break
-        }
-      }
-      if (win) return true;
-
-      win = true;
-        for(let i = 0; i < 3; i++){
-        if(this.board[i][2 - i] !== players){
-          win = false
-          break
-        }
-      }
-      if (win) return true;
-    }
-
-    return false;
+    });
   }
 
 }

@@ -1,3 +1,5 @@
+@import '/src/app/app.component.scss';
+
 ul,
 ol {
   list-style: none;
@@ -38,7 +40,27 @@ button {
 }
 
   .game-section {
-    padding: 50px 30px;
+    .line-title {
+      position: relative;
+      width: 400px;
+      color: $white;
+      &::before,&::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 2px;
+      }
+      &::before {
+        width: 100%;
+        background: #f2f2f2;
+      }
+      &::after {
+        width: 32px;
+        background: #e73700;
+      }
+    }
     .hold{
       width: 320px;
       height: 450px;
@@ -117,7 +139,7 @@ button {
 }
 .game-section .item-desc {
   padding: 0 24px 12px;
-  color: #fff;
+  color: $white;
   position: relative;
   z-index: 1;
   overflow: hidden;

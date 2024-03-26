@@ -1,6 +1,7 @@
-<section class="game-section" *ngIf="dataset">
+<section class="game-section cont" *ngIf="data">
+  <h2 class="line-title">{{title}}</h2>
   <owl-carousel-o [options]="carouselOptions">
-    <ng-container *ngFor="let i of dataset" >
+    <ng-container *ngFor="let i of data" >
       <ng-template carouselSlide>
         <div class="hold" >
           <div class="item" [style.background-image]="'url(' + i.img + ')'">
