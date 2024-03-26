@@ -1,27 +1,33 @@
-# Site
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+![Logo](https://leosoareso.github.io/apis/site/api/icons/svgs/logo_slogan.svg)
 
-## Development server
+Esse projeto se trata de um rebrand e refactor de um antigo modelo feito no inicío da minha jornada na tecnologia e desenvolvimento, este que pode ser visto aqui https://leosoareso.github.io/leonardosoares/. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Nesta nova versão estou utilizando Angular e sua stack, além de alguns trques com o Scss. Neste site você poderá ver minhas skills, carreira e portfolio, além de poder me contatar pelas minhas redes sociais, além disso constantemente serão introduzidas novas features com atualizações e melhorias.
 
-## Code scaffolding
+## Hospedagem
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Hospedado no github pages.
 
-## Build
+https://leosoareso.github.io/site/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Badges
 
-## Running unit tests
+[![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
+[![SCSS](https://img.shields.io/badge/SCSS-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![API](https://img.shields.io/badge/API-005571?style=for-the-badge)](https://en.wikipedia.org/wiki/Application_programming_interface)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Authors
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [@LeoSoaresO](https://github.com/LeoSoaresO) - Dessenvolvimento.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
