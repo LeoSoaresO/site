@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
+  others:any;
   dataset:any;
 
   constructor(private service: ApiService) { }
@@ -22,11 +23,16 @@ export class HomeComponent implements OnInit {
     this.service.getPortfolio().subscribe((res: any) => {
       console.log(res);
 
-      this.dataset = res.port.map((game: any) => ({
-        ...game,
+      this.dataset = res.profissional.map((data: any) => ({
+        ...data,
         active: false
       }));
-      console.log(this.dataset);
+
+      this.others = res.others.map((d: any) => ({
+        ...d,
+        active: false
+      }));
+      console.log(this.others);
 
     });
   }

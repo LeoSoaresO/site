@@ -1,28 +1,6 @@
 @import '/src/app/app.component.scss';
 
-ul,
-ol {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-a:focus,
-a:active,
-a:visited,
-a:hover {
-  text-decoration: none;
-  outline: none;
-}
-a:hover {
-  color: #e73700;
-}
 h2 {
-  margin-bottom: 48px;
   padding-bottom: 16px;
   font-size: 20px;
   line-height: 28px;
@@ -37,6 +15,17 @@ h3 {
 }
 button {
   outline: none !important;
+  border: 2px solid $white;
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 600;
+  transition: 0.5s ease-in;
+  &:hover{
+    background-color: $white;
+    color: $text;
+    transition: 0.5s ease-out;
+  }
 }
 
   .game-section {
@@ -60,6 +49,10 @@ button {
         width: 32px;
         background: #e73700;
       }
+    }
+    .line-desc{
+      font-size: 12px;
+      color: $white;
     }
     .hold{
       width: 320px;
@@ -109,11 +102,10 @@ button {
       height: 450px;
       display: flex;
       align-items: flex-end;
-      background: #343434 no-repeat center center / cover;
+      background: $text no-repeat center center / cover;
       border-radius: 16px;
       overflow: hidden;
       position: relative;
-      cursor: pointer;
       border: 2px ridge #4e00c2;
       transition: all 0.4s ease-in-out;
       &:hover {
@@ -127,35 +119,26 @@ button {
         width: 100%;
         left: 0;
         top: 0;
-        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.4))
+        background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.7))
       }
     }
   }
 
-.game-section .owl-stage {
-  margin: 15px 0;
-  display: flex;
-  display: -webkit-flex;
-}
 .game-section .item-desc {
   padding: 0 24px 12px;
   color: $white;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  transform: translateY(calc(100% - 54px));
-  -webkit-transform: translateY(calc(100% - 54px));
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
-  margin-bottom: 145px;
+  margin-bottom: 20px;
 }
 .game-section .item.active .item-desc {
   transform: none;
   -webkit-transform: none;
 }
-/******** Middle section CSS End *******/
 
-/***** responsive css Start ******/
 
 @media (min-width: 992px) and (max-width: 1199px) {
   h2 {
@@ -167,7 +150,6 @@ button {
     line-height: 32px;
   }
 
-  /* -------- Landing page ------- */
   .game-section {
     padding: 50px 30px;
     .item {
@@ -200,7 +182,6 @@ button {
     width: 330px;
   }
 
-  /* -------- Landing page ------- */
   .game-section {
     padding: 50px 30px 40px;
   }
@@ -234,7 +215,6 @@ button {
     width: 250px;
   }
 
-  /* -------- Landing page ------- */
   .game-section {
     padding: 30px 15px 20px;
   }

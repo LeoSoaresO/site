@@ -3,7 +3,8 @@
   <h1 class="text-shadow">Carreira</h1>
   <app-timeline></app-timeline>
 </section>
-<h1 class="text-shadow mb-10 mt-10">Portfolio</h1>
-<!-- <app-slider></app-slider> -->
-<app-slider-cards title='Experiências Profissionais' [data]="dataset">/app-slider-cards>
-<!-- <app-slider-cards title='Experiências' [data]="dataset">/app-slider-cards> -->
+<section>
+  <h1 class="text-shadow mb-10 mt-10">Portfolio</h1>
+  <app-slider-cards title='Experiências Profissionais' desc='Não incluídos projetos internos.' [data]="dataset"></app-slider-cards>
+  <app-slider-cards title='Outros Projetos' [data]="others"></app-slider-cards>
+</section>

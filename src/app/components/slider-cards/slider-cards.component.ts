@@ -1,15 +1,15 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit,  } from '@angular/core';
 
 @Component({
   selector: 'app-slider-cards',
   templateUrl: './slider-cards.component.html',
   styleUrls: ['./slider-cards.component.scss']
 })
-export class SliderCardsComponent implements OnChanges {
-  dataset: any;
+export class SliderCardsComponent implements OnInit {
   carouselOptions: any;
   @Input() data:any;
   @Input() title:string = '';
+  @Input() desc:string = '';
 
   constructor() {
     this.carouselOptions = {
@@ -25,8 +25,12 @@ export class SliderCardsComponent implements OnChanges {
       items: 3,
     }
   }
-  ngOnChanges(): void {
+  ngOnInit(): void {
 
+  }
+
+  openLink(item:any){
+    window.open(item.link, "_blank")
   }
 
 }

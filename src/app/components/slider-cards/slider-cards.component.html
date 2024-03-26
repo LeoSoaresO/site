@@ -1,5 +1,6 @@
-<section class="game-section cont" *ngIf="data">
+<section class="mb-10 game-section cont" *ngIf="data">
   <h2 class="line-title">{{title}}</h2>
+  <span class="line-desc">{{desc}}</span>
   <owl-carousel-o [options]="carouselOptions">
     <ng-container *ngFor="let i of data" >
       <ng-template carouselSlide>
@@ -8,6 +9,7 @@
             <div class="item-desc">
               <h3>{{ i.name }}</h3>
               <p>{{ i.desc }}</p>
+              <button (click)="openLink(i)">Visite</button>
             </div>
           </div>
         </div>
