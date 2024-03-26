@@ -17,12 +17,15 @@ export class SliderCardsComponent implements OnInit {
       mouseDrag: true,
       touchDrag: true,
       pullDrag: true,
-      dots: true,
+      dotsEach: true,
       navSpeed: 400,
       navText: ['', ''],
-      center: true,
+      center: false,
       startPosition: 0,
-      items: 3,
+      items: 2.90,
+      autoplay:true,
+      autoplayTimeout:4000,
+      autoplayHoverPause:true
     }
   }
   ngOnInit(): void {
