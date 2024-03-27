@@ -15,6 +15,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
 import { InViewportDirective } from './in-viewport.directive';
 import { SliderComponent } from './components/slider/slider.component';
 import { SliderCardsComponent } from './components/slider-cards/slider-cards.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SliderCardsComponent } from './components/slider-cards/slider-cards.com
     InViewportDirective,
     SliderComponent,
     SliderCardsComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
