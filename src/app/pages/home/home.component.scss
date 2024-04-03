@@ -4,6 +4,17 @@
   background-color: antiquewhite;
   }
 
+.gotop{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
 h1 {
   font-size: 48px;
   font-weight: 600;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener  } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
 
@@ -9,14 +9,27 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
+  showButton = false;
   others:any;
   dataset:any;
 
   constructor(private service: ApiService) { }
 
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (window.scrollY  > 30) {
+      this.showButton = true;
+    } else {
+      this.showButton = false;
+    }
+  }
 
   ngOnInit() {
     this.getPortfolio();
+  }
+
+  topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   getPortfolio(): void {
