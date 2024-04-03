@@ -1,1 +1,17 @@
-<p>contact works!</p>
+<section class="main flex flex-col items-center">
+  <div class="links">
+    <div *ngFor="let d of data.links">
+      <a class="href" target="_blank" [href]="d.link">
+        <img class="icon" src="{{d.icon}}" alt="">
+      </a>
+    </div>
+  </div>
+  <!-- <div>
+    <div class="text-center">
+      <h2 class="line-title">title</h2>
+    </div>
+  </div> -->
+  <div>
+    <span>Desenvolvido por Leonardo Soares.</span>
+  </div>
+</section>

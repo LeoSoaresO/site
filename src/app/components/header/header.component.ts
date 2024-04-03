@@ -37,7 +37,11 @@ export class HeaderComponent implements OnInit {
         link.click();
         document.body.removeChild(link);
       });
-    }
+  }
+
+  goToContactSection(){
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+  }
 
   getInfo(){
     this.service.getInfo().subscribe((res:any) =>{
