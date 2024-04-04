@@ -1,15 +1,11 @@
 @import '/src/app/app.component.scss';
 
-.contact{
-  background-color: antiquewhite;
-  }
-
 .gotop{
   position: fixed;
   right: 20px;
   bottom: 20px;
   z-index: 90;
-  background-color: antiquewhite;
+  background-color: $white;
   border-radius: 50%;
   width: 70px;
   height: 70px;
@@ -18,7 +14,7 @@
 h1 {
   font-size: 48px;
   font-weight: 600;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 1px $white;
   color: $white;
   text-align: center;
   text-transform: uppercase;
@@ -41,7 +37,7 @@ h1 {
   position:relative;
   height:20vh;
   text-align:center;
-  background-color: white;
+  background-color: $white;
 }
 
 /* Animation */
