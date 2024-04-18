@@ -12,8 +12,15 @@ export class HomeComponent implements OnInit {
   showButton = false;
   others:any;
   dataset:any;
+  mouseX = 0;
+  mouseY = 0;
 
   constructor(private service: ApiService) { }
+
+  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
+    this.mouseX = event.clientX;
+    this.mouseY = event.clientY;
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {

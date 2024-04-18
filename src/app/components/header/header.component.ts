@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -11,8 +11,8 @@ export class HeaderComponent implements OnInit {
 
   data:any;
   skills:any;
-// "Desenvolvedor Front-end Sênior com mais de 4 anos de experiência. Tecnólogo em Sistemas para Internet. Participação em diversos projetos em áreas como educação, financeiro, social media, aluguel de veículos e marketplaces. Experiência em criação e desenvolvimento de dashboards, marketplaces, sites institucionais, aplicações de controle e aplicações de uso interno. Especializado em criar aplicativos web, escaláveis e altamente responsivos. Experiente em trabalhar com Node.js e Git para suportar projetos. Habilidoso em UX e UI, Sempre buscando aprender.",
-
+  mouseX = 0;
+  mouseY = 0;
 
   constructor(
     private service: ApiService,
@@ -22,7 +22,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getInfo();
     this.getSkills();
+  }
 
+  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
+    this.mouseX = event.clientX;
+    this.mouseY = event.clientY;
   }
 
   downloadFile(){

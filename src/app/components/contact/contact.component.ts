@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { ApiService } from 'src/app/services/api.service';
 export class ContactComponent implements OnInit {
 
   data: any;
+  mouseX = 0;
+  mouseY = 0;
 
   constructor(
     private service: ApiService,
@@ -16,6 +18,11 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInfo();
+  }
+
+  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
+    this.mouseX = event.clientX;
+    this.mouseY = event.clientY;
   }
 
   getInfo(){

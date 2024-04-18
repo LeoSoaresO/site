@@ -1,5 +1,5 @@
 <section class="main flex flex-col items-center">
-  <div class="links">
+  <div class="links" *ngIf="data">
     <div *ngFor="let d of data.links">
       <a class="href" target="_blank" [href]="d.link">
         <img class="icon" src="{{d.icon}}" alt="">

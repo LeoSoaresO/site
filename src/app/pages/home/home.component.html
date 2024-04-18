@@ -7,10 +7,14 @@
 </section>
 <section>
   <h1 class="text-shadow pb-10 pt-10">Portfolio</h1>
-  <app-slider-cards title='Experiências Profissionais' desc='Não incluídos projetos internos.' [data]="dataset"></app-slider-cards>
-  <app-slider-cards title='Outros Projetos' [data]="others"></app-slider-cards>
+  <div class="mb-14">
+    <app-slider-cards  title='Experiências Profissionais' desc='Não incluídos projetos internos.' [data]="dataset"></app-slider-cards>
+  </div>
+  <div class="mt-5">
+    <app-slider-cards title='Outros Projetos' [data]="others"></app-slider-cards>
+  </div>
 </section>
-<section class="background-d">
+<section [style.background]="'radial-gradient(circle at ' + mouseX + 'px ' + mouseY + 'px, rgba(0,126,237,1) 0%, rgba(0,110,218,1) 25%, rgba(0,95,199,1) 50%, rgba(0,79,180,1) 75%, rgba(0,63,161,1) 100%)'">
     <!--Waves Container-->
     <div class="control animate__animated animate__fadeInUp">
       <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

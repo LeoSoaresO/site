@@ -1,55 +1,57 @@
-<div class="header background-d" *ngIf="data && skills">
+<div class="header" *ngIf="data && skills" [style.background]="'radial-gradient(circle at ' + mouseX + 'px ' + mouseY + 'px, rgba(0,126,237,1) 0%, rgba(0,110,218,1) 25%, rgba(0,95,199,1) 50%, rgba(0,79,180,1) 75%, rgba(0,63,161,1) 100%)'">
 
   <div class="logo flex justify-center items-center
   animate__animated animate__fadeInDown">
-    <img src="{{skills.logo}}" alt="">
+    <img src="{{skills.whtLogo}}" alt="">
   </div>
 
-  <div class="inner-header cont flex justify-around items-start">
-    <div class="info card animate__animated animate__fadeInLeft" >
-      <div class="img animate__animated animate__rotateIn animate__delay-1s">
-        <img src="{{data.img}}" alt="">
-      </div>
-      <div class="personal">
-        <h1 class="text-shadow-2">{{data.name}}</h1>
-        <span>{{data.role}}</span>
-      </div>
-      <div class="links">
-        <div *ngFor="let d of data.links">
-          <a class="href" target="_blank" [href]="d.link">
-            <img class="icon" src="{{d.icon}}" alt="">
-          </a>
+  <div class="inner-header cont">
+    <div class="control flex justify-around items-start">
+      <div class="info card animate__animated animate__fadeInLeft" >
+        <div class="img animate__animated animate__rotateIn animate__delay-1s">
+          <img src="{{data.img}}" alt="">
+        </div>
+        <div class="personal">
+          <h1 class="text-shadow-2">{{data.name}}</h1>
+          <span>{{data.role}}</span>
+        </div>
+        <div class="links">
+          <div *ngFor="let d of data.links">
+            <a class="href" target="_blank" [href]="d.link">
+              <img class="icon" src="{{d.icon}}" alt="">
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="holder">
-      <div class="flex gap_div">
-        <div class="description card animate__animated animate__fadeIn animate__delay-4s">
-          <ngx-typed-js [strings]="[
-          'Desenvolvedor Front-end Sênior.',
-          'Mais de 4 anos de experiência.',
-          'Tecnólogo em Sistemas para Internet.',
-          'Participação em diversos projetos em áreas como educação, financeiro, social media, aluguel de veículos e marketplaces',
-          'Experiência em criação e desenvolvimento de dashboards, marketplaces, sites institucionais, aplicações de controle e aplicações de uso interno.',
-          'Especializado em criar aplicativos web, escaláveis e altamente responsivos.',
-          'Sempre buscando aprender!'
-          ]" [typeSpeed]="20" [loop]="true" [startDelay]="5000">
-            <div class="text">
-              <span class="typing text-shadow-2"></span>
+      <div class="holder">
+        <div class="flex gap_div">
+          <div class="description card animate__animated animate__fadeIn animate__delay-4s">
+            <ngx-typed-js [strings]="[
+            'Desenvolvedor Front-end Sênior.',
+            'Mais de 4 anos de experiência.',
+            'Tecnólogo em Sistemas para Internet.',
+            'Participação em diversos projetos em áreas como educação, financeiro, social media, aluguel de veículos e marketplaces',
+            'Experiência em criação e desenvolvimento de dashboards, marketplaces, sites institucionais, aplicações de controle e aplicações de uso interno.',
+            'Especializado em criar aplicativos web, escaláveis e altamente responsivos.',
+            'Sempre buscando aprender!'
+            ]" [typeSpeed]="20" [loop]="true" [startDelay]="5000">
+              <div class="text">
+                <span class="typing text-shadow-2"></span>
+              </div>
+            </ngx-typed-js>
+          </div>
+          <div class="buttons">
+            <button (click)="downloadFile()" class="btn-cv animate__animated animate__fadeInRight animate__delay-2s">Download CV</button>
+            <button (click)="goToContactSection()" class="btn-contact animate__animated animate__fadeInRight animate__delay-3s">Contato</button>
+          </div>
+        </div>
+        <div class="skills animate__animated animate__fadeInRight animate__delay-1s" *ngIf="skills">
+          <div class="icon_skills card" *ngFor="let s of skills.skils">
+            <span class="name text-shadow-2">{{s.name}}</span>
+            <img class="skill" [src]="s.icon" alt="" srcset="">
+            <div class="flex">
+              <img class="stars" *ngFor="let star of getStarsArray(s.stars)" [src]="skills.starIcon" alt="" srcset="">
             </div>
-          </ngx-typed-js>
-        </div>
-        <div class="buttons">
-          <button (click)="downloadFile()" class="btn-cv animate__animated animate__fadeInRight animate__delay-2s">Download CV</button>
-          <button (click)="goToContactSection()" class="btn-contact animate__animated animate__fadeInRight animate__delay-3s">Contato</button>
-        </div>
-      </div>
-      <div class="skills animate__animated animate__fadeInRight animate__delay-1s" *ngIf="skills">
-        <div class="icon_skills card" *ngFor="let s of skills.skils">
-          <span class="name text-shadow-2">{{s.name}}</span>
-          <img class="skill" [src]="s.icon" alt="" srcset="">
-          <div class="flex">
-            <img class="stars" *ngFor="let star of getStarsArray(s.stars)" [src]="skills.starIcon" alt="" srcset="">
           </div>
         </div>
       </div>
