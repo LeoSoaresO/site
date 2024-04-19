@@ -54,7 +54,7 @@
         span {
           font-weight: 300;
           font-size: 20px;
-          color: $text;
+          color: var(--txt);
         }
       }
       .links {
@@ -135,12 +135,12 @@
             border-radius: 10px;
             text-transform: uppercase;
             font-weight: bold;
-            color: $white;
+            color: var(--wht);
             transition: 0.5s ease;
-            border: 3px solid $white;
+            border: 3px solid var(--wht);
             &:hover{
-              background: $white;
-              color: $black;
+              background: var(--wht);
+              color: var(--blk);
               transition: 0.5s ease;
               font-size: 18px;
             }

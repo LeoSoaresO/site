@@ -2,8 +2,10 @@
 
   <div class="logo flex justify-center items-center
   animate__animated animate__fadeInDown">
-    <img src="{{skills.whtLogo}}" alt="">
+    <img *ngIf="boo == false" src="{{skills.whtLogo}}" alt="">
+    <img *ngIf="boo == true" src="{{skills.logo}}" alt="">
   </div>
+  <app-theme-control (boolean)="themeCtrl($event)"></app-theme-control>
 
   <div class="inner-header cont">
     <div class="control flex justify-around items-start">
@@ -18,7 +20,8 @@
         <div class="links">
           <div *ngFor="let d of data.links">
             <a class="href" target="_blank" [href]="d.link">
-              <img class="icon" src="{{d.icon}}" alt="">
+              <img class="icon" *ngIf="boo == false" src="{{d.icon}}" alt="">
+              <img class="icon" *ngIf="boo == true" src="{{d.iconWht}}" alt="">
             </a>
           </div>
         </div>
@@ -49,8 +52,11 @@
           <div class="icon_skills card" *ngFor="let s of skills.skils">
             <span class="name text-shadow-2">{{s.name}}</span>
             <img class="skill" [src]="s.icon" alt="" srcset="">
-            <div class="flex">
+            <div class="flex" *ngIf="boo == false">
               <img class="stars" *ngFor="let star of getStarsArray(s.stars)" [src]="skills.starIcon" alt="" srcset="">
+            </div>
+            <div class="flex" *ngIf="boo == true">
+              <img class="stars" *ngFor="let star of getStarsArray(s.stars)" [src]="skills.starIconWht" alt="" srcset="">
             </div>
           </div>
         </div>
@@ -61,21 +67,34 @@
      <!-- <app-tic-tac-toe></app-tic-tac-toe> -->
 
   <!--Waves Container-->
-  <div class="animate__animated animate__fadeInUp">
-  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-  <defs>
-  <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-  </defs>
-  <g class="parallax">
-  <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,0,0,0.7" />
-  <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,0,0,0.5)" />
-  <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,0,0,0.3)" />
-  <use xlink:href="#gentle-wave" x="48" y="7" fill="#000" />
-  </g>
-  </svg>
+  <div class="animate__animated animate__fadeInUp" *ngIf="boo == false">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#FAF5FF" />
+    </g>
+    </svg>
   </div>
-  <!--Waves end-->
-
+  <div class="animate__animated animate__fadeInUp" *ngIf="boo == true">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <g class="parallax">
+    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(11, 18, 21,0.7" />
+    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(11, 18, 21,0.5)" />
+    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(11, 18, 21,0.3)" />
+    <use xlink:href="#gentle-wave" x="48" y="7" fill="#0B1215" />
+    </g>
+    </svg>
+  </div>
+    <!--Waves end-->
   </div>
   <!--Header ends-->

@@ -14,7 +14,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-  background-color: $black;
+  background-color: var(--wht);
+  transition: 0.5s ease;
   margin:0;
   font-family: "Raleway", sans-serif;
 }
+
+
+html[data-theme="light"] {
+  --wht: #{$white};
+  --blk: #{$black};
+  --txt: #{$text};
+}
+
+html[data-theme="dark"] {
+  --wht: #{$black};
+  --blk: #{$white};
+  --txt: #{$light_blue};
+}
+

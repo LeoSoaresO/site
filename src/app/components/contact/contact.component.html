@@ -1,8 +1,10 @@
 <section class="main flex flex-col items-center">
+  <h1 class="text-shadow pb-10 pt-10 title-big">Contato & Mais</h1>
   <div class="links" *ngIf="data">
     <div *ngFor="let d of data.links">
       <a class="href" target="_blank" [href]="d.link">
-        <img class="icon" src="{{d.icon}}" alt="">
+        <img class="icon" *ngIf="boo == true" src="{{d.icon}}" alt="">
+        <img class="icon" *ngIf="boo == false" src="{{d.iconWht}}" alt="">
       </a>
     </div>
   </div>
@@ -12,6 +14,6 @@
     </div>
   </div> -->
   <div>
-    <span>Desenvolvido por Leonardo Soares.</span>
+    <span class="dev">Desenvolvido por Leonardo Soares.</span>
   </div>
 </section>

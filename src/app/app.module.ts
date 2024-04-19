@@ -16,6 +16,7 @@ import { InViewportDirective } from './in-viewport.directive';
 import { SliderComponent } from './components/slider/slider.component';
 import { SliderCardsComponent } from './components/slider-cards/slider-cards.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { ThemeControlComponent } from './components/theme-control/theme-control.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ContactComponent } from './components/contact/contact.component';
     SliderComponent,
     SliderCardsComponent,
     ContactComponent,
+    ThemeControlComponent,
   ],
   imports: [
     BrowserModule,

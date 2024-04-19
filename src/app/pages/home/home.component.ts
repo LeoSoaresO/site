@@ -1,42 +1,41 @@
-import { Component, OnInit, HostListener  } from '@angular/core';
+import { AfterViewInit, Component, HostListener } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
-
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
 
   showButton = false;
-  others:any;
-  dataset:any;
+  others: any;
+  dataset: any;
   mouseX = 0;
   mouseY = 0;
+  boo: any;
 
   constructor(private service: ApiService) { }
 
-  @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
-    this.mouseX = event.clientX;
-    this.mouseY = event.clientY;
-  }
-
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (window.scrollY  > 30) {
+    if (window.scrollY > 30) {
       this.showButton = true;
     } else {
       this.showButton = false;
     }
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.getPortfolio();
   }
 
+  themeCtrl(event: any){
+    this.boo = event;
+  }
+
   topFunction() {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   getPortfolio(): void {

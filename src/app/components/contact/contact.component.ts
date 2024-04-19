@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -11,6 +11,8 @@ export class ContactComponent implements OnInit {
   data: any;
   mouseX = 0;
   mouseY = 0;
+
+  @Input() boo:boolean = false;
 
   constructor(
     private service: ApiService,

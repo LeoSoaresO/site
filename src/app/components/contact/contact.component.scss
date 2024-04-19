@@ -2,6 +2,10 @@
 
 .main{
   padding-bottom: 40px;
+  h1{
+    color: var(--wht);
+  -webkit-text-stroke: 1px var(--wht);
+  }
   .links {
     display: flex;
     justify-content: space-around;
@@ -18,5 +22,8 @@
       transition: 0.3s ease;
       }
     }
+  }
+  .dev {
+    color: var(--wht);
   }
 }

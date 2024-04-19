@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -13,6 +13,9 @@ export class HeaderComponent implements OnInit {
   skills:any;
   mouseX = 0;
   mouseY = 0;
+  boo: any;
+
+  @Output() boolean = new EventEmitter<boolean>();
 
   constructor(
     private service: ApiService,
@@ -27,6 +30,11 @@ export class HeaderComponent implements OnInit {
   @HostListener('mousemove', ['$event']) onMouseMove(event: MouseEvent) {
     this.mouseX = event.clientX;
     this.mouseY = event.clientY;
+  }
+
+  themeCtrl(event: any){
+    this.boo = event;
+    this.boolean.emit(this.boo)
   }
 
   downloadFile(){
