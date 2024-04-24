@@ -15,7 +15,7 @@
 
 body {
   background-color: var(--wht);
-  transition: 0.5s ease;
+  transition: all 1s cubic-bezier(0.93, 0.06, 0.03, 0.86);
   margin:0;
   font-family: "Raleway", sans-serif;
 }

@@ -4,7 +4,7 @@
   position: fixed;
   right: 20px;
   bottom: 80px;
-  transition: 0.5s ease;
+  transition: all 1s cubic-bezier(0.93, 0.06, 0.03, 0.86);
   z-index: 90;
   background-color: var(--blk);
   border-radius: 50%;
@@ -23,7 +23,7 @@
 
 .control {
   rotate: 180deg;
-  transition: 0.5s ease;
+  transition: all 1s cubic-bezier(0.93, 0.06, 0.03, 0.86);
 }
 
 .content {
